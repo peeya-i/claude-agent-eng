@@ -25,13 +25,33 @@ Claude Code is a command-line tool that lets Claude work directly in your termin
 
 ```
 claude-agent-eng/
-└── class-01/
-    ├── README.md   # class-01 overview and objectives
-    └── BUILD.md    # setup and run instructions
+├── class-01/
+│   ├── README.md         # class-01 overview and objectives
+│   └── BUILD.md          # setup and run instructions
+└── class-02/
+    ├── README.md          # class-02 overview and what was done
+    ├── CLAUDE.md          # project instructions/context for Claude Code
+    ├── src/class_02/      # application source
+    ├── tests/             # pytest unit tests
+    ├── evals/             # LLM-judged agent behavior evals
+    ├── configs/           # environment configs (default.yaml, test.yaml)
+    ├── .claude/settings.json
+    ├── .github/workflows/ # CI (lint + test)
+    ├── pyproject.toml
+    ├── requirements.txt / requirements-dev.txt
+    ├── Makefile           # install / run / test / lint / evals
+    └── .env.example
 ```
 
-Each `class-NN/` folder is a self-contained lab module with its own `README.md` (objectives) and `BUILD.md` (setup/run instructions).
+`class-01` is a self-contained lab module with its own `README.md` (objectives)
+and `BUILD.md` (setup/run instructions). `class-02` is a full Python
+application scaffold (source, tests, evals, configs, CI) used to practice
+Claude Code on a real project layout — see [class-02/README.md](class-02/README.md)
+for what was done and [class-02/CLAUDE.md](class-02/CLAUDE.md) for the
+Claude Code project context.
 
 ## Getting Started
 
-Start with [class-01/README.md](class-01/README.md).
+Start with [class-01/README.md](class-01/README.md), then move on to
+[class-02/README.md](class-02/README.md) for a full app-development project
+structure.
