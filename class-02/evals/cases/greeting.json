@@ -1,0 +1,9 @@
+{
+  "id": "greeting-basic",
+  "description": "Agent should produce a friendly greeting mentioning the given name.",
+  "prompt": "Greet a user named Ada.",
+  "criteria": [
+    "Response contains the name 'Ada'",
+    "Response is friendly and contains a greeting word (e.g. 'hello', 'hi', 'welcome')"
+  ]
+}
