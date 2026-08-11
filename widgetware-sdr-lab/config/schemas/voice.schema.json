@@ -1,0 +1,20 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Voice configuration (voice.yaml)",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["tone", "avoid", "first_message"],
+  "properties": {
+    "tone": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+    "avoid": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+    "first_message": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["pitch_allowed", "maximum_words"],
+      "properties": {
+        "pitch_allowed": {"type": "boolean"},
+        "maximum_words": {"type": "integer", "minimum": 1}
+      }
+    }
+  }
+}

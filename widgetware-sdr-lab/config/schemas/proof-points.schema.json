@@ -1,0 +1,54 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Proof-points registry (proof-points.yaml)",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["proof_points"],
+  "properties": {
+    "proof_points": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "proof_id",
+          "approved_claim",
+          "source_reference",
+          "status",
+          "last_reviewed_date",
+          "valid_until",
+          "owner",
+          "disclosure_status",
+          "allowed_contexts",
+          "prohibited_wording"
+        ],
+        "properties": {
+          "proof_id": {"type": "string", "pattern": "^PP-[0-9]{3,}$"},
+          "approved_claim": {"type": "string", "minLength": 1},
+          "source_reference": {"type": "string", "minLength": 1},
+          "status": {
+            "type": "string",
+            "enum": ["approved", "pending_review", "retired"]
+          },
+          "last_reviewed_date": {"type": "string", "format": "date"},
+          "valid_until": {"type": "string", "format": "date"},
+          "owner": {"type": "string", "minLength": 1},
+          "disclosure_status": {
+            "type": "string",
+            "enum": ["public", "client-name-confidential", "internal-only"]
+          },
+          "allowed_contexts": {
+            "type": "array",
+            "items": {"type": "string"},
+            "minItems": 1
+          },
+          "prohibited_wording": {
+            "type": "array",
+            "items": {"type": "string"}
+          }
+        }
+      }
+    }
+  }
+}

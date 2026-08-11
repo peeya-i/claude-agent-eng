@@ -1,0 +1,85 @@
+# Approved evidence registry for claims about ourselves (not the prospect).
+#
+# offering.yaml's proof_points are the sales-facing summary; this file is
+# the enforceable source of truth behind them. The same evidence discipline
+# CLAUDE.md requires for claims about a prospect (source, date, confidence)
+# applies to claims about us — an unsourced claim about our own experience
+# is exactly as fabricatable as an unsourced claim about theirs, and the
+# Message Composer / Evidence Reviewer must be able to check both the same
+# way: look up the ID, confirm it's approved and current, confirm the
+# context it's being used in is allowed.
+#
+# Lifecycle, not a single ambiguous date: `status` is the current
+# disposition, `last_reviewed_date` is when someone last confirmed the
+# claim is still accurate, `valid_until` is when it must be re-reviewed
+# regardless of status, and `owner` is who to ask. A proof point is usable
+# only when status is "approved" AND today is on or before valid_until —
+# both conditions must hold.
+
+proof_points:
+  - proof_id: PP-001
+    approved_claim: >
+      Powers embedded analytics for multiple production B2B SaaS platforms.
+    source_reference: internal customer list, ref CUST-2026-03 (client names withheld)
+    status: approved
+    last_reviewed_date: "2026-06-01"
+    valid_until: "2027-06-01"
+    owner: marketing
+    disclosure_status: client-name-confidential
+    allowed_contexts:
+      - first-touch outreach
+      - discovery calls
+    prohibited_wording:
+      - naming a specific client without written approval
+
+  - proof_id: PP-002
+    approved_claim: >
+      Proven integration with common data warehouses and event pipelines,
+      including Snowflake, BigQuery, and Segment.
+    source_reference: internal integration test matrix, 2026
+    status: approved
+    last_reviewed_date: "2026-06-01"
+    valid_until: "2027-06-01"
+    owner: marketing
+    disclosure_status: public
+    allowed_contexts:
+      - first-touch outreach
+      - discovery calls
+      - proposals
+    prohibited_wording:
+      - implying integration with any specific named third-party product not actually supported
+
+  - proof_id: PP-003
+    approved_claim: >
+      Implementation led by engineers who have shipped embeddable UI
+      components at production scale.
+    source_reference: team bios / delivery history, internal
+    status: approved
+    last_reviewed_date: "2026-06-01"
+    valid_until: "2027-06-01"
+    owner: marketing
+    disclosure_status: public
+    allowed_contexts:
+      - first-touch outreach
+      - discovery calls
+      - proposals
+    prohibited_wording:
+      - specific system names or client identities not separately approved
+
+  # Deliberately retired — a fixture, not an error. Demonstrates that an
+  # inactive proof point must not be usable, against a real example rather
+  # than only synthetically mutated test data. offering.yaml does not
+  # reference this ID.
+  - proof_id: PP-004
+    approved_claim: >
+      Named in an industry analyst report as an emerging embedded-analytics vendor.
+    source_reference: analyst report, ref AR-2024-051
+    status: retired
+    last_reviewed_date: "2025-02-01"
+    valid_until: "2025-08-01"
+    owner: marketing
+    disclosure_status: public
+    allowed_contexts:
+      - first-touch outreach
+    prohibited_wording:
+      - naming the analyst firm without current written permission

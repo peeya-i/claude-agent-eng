@@ -1,89 +1,47 @@
-# Ideal Customer Profile (ICP) for WidgetWare
+# Ideal Customer Profile (ICP) for WidgetWare.
+# Every research and scoring agent reads this file to decide what "a good
+# fit" means. Edit this to match the real target market before running any
+# agent for real.
 #
 # WidgetWare sells an embeddable analytics/dashboard component library and
 # hosted API that B2B SaaS companies drop into their own product, so their
 # end users get self-serve reporting without the vendor building
-# charting/analytics infrastructure in-house.
-#
-# Read by the account-research Skill (.claude/skills/account-research) to
-# judge industry, size, and signal fit for a target company. See also
-# config/offering.yaml (what we sell) once it exists.
+# charting/analytics infrastructure in-house. See config/offering.yaml for
+# the full offering and config/proof-points.yaml for sourced proof points.
 
-last_updated: 2026-08-10
-
-industries:
-  - name: B2B SaaS / vertical software
-    fit: strong
-    notes: >
-      Core fit — product-led or sales-led SaaS companies that need
-      customer-facing analytics but don't want to build it themselves.
-  - name: Fintech / payments platforms
-    fit: strong
-    notes: Frequent need for embedded reporting and reconciliation dashboards.
-  - name: E-commerce / marketplace platforms
-    fit: moderate
-    notes: Seller- or merchant-facing analytics dashboards.
-  - name: Healthtech / health IT
-    fit: moderate
-    notes: Longer sales cycles and compliance overhead, but still a viable fit.
-  - name: Traditional enterprise IT / on-prem software
-    fit: weak
-    notes: Slower to adopt embedded analytics; tends to build in-house or buy legacy BI.
+industry:
+  - B2B SaaS / vertical software
+  - Fintech / payments platforms
+  - E-commerce / marketplace platforms
+  - Healthtech / health IT
 
 company_size:
-  employees_min: 50
-  employees_max: 2000
-  sweet_spot: "150-600 employees"
-  notes: >
-    Below ~50 employees, teams typically build analytics ad hoc rather
-    than buy. Above ~2000, procurement and build-vs-buy politics slow the
-    sales cycle significantly — still worth pursuing, just not prioritized.
+  minimum_employees: 50
+  maximum_employees: 2000   # still worth pursuing above this, just not prioritized
 
-target_geography:
-  primary:
-    - United States
-    - Canada
-  secondary:
-    - United Kingdom
-    - Ireland
-    - Australia
-    - New Zealand
-  notes: >
-    Primary regions get full SDR coverage. Secondary regions are
-    opportunistic (inbound or warm referral only) due to timezone and
-    support-hours constraints.
+geography:
+  - United States
+  - Canada
+  - United Kingdom
+  - Ireland
+  - Australia
+  - New Zealand
 
-target_job_roles:
-  economic_buyer:
-    - VP of Product
-    - VP of Engineering
-    - Chief Product Officer
-  champion:
-    - Director of Product
-    - Head of Platform Engineering
-    - Product Manager, Analytics/Reporting
-  technical_evaluator:
-    - Staff/Principal Engineer
-    - Engineering Manager, Platform
+target_roles:
+  - VP of Product
+  - VP of Engineering
+  - Chief Product Officer
+  - Director of Product
+  - Head of Platform Engineering
+  - Product Manager, Analytics/Reporting
+  - Staff/Principal Engineer
+  - Engineering Manager, Platform
 
 buying_signals:
-  strong:
-    - Job postings for "data visualization engineer," "analytics engineer,"
-      or "embedded BI" roles — signals an in-house build effort about to
-      start, and a window to pitch buy-vs-build.
-    - Public roadmap or changelog mentions of "customer dashboards,"
-      "reporting," or "insights" features shipping soon.
-    - Recent Series B+ funding round — budget newly available for
-      product-led growth investments.
-    - Job postings or reviews mentioning an existing embedded-analytics
-      vendor — a competitor-displacement opportunity.
-  moderate:
-    - Headcount growth in product/engineering over the last two quarters.
-    - New VP of Product or CPO hire in the last six months — new
-      leadership often re-evaluates build-vs-buy decisions.
-    - Company blog or press mentions of "self-serve reporting" or
-      "customer insights" as a stated priority.
-  weak:
-    - General company growth news with no product or analytics signal.
-    - Generic "we're a data-driven company" language with no concrete
-      initiative attached.
+  - job postings for data visualization engineer, analytics engineer, or embedded BI roles
+  - public roadmap or changelog mentions of customer dashboards, reporting, or insights features shipping soon
+  - recent Series B+ funding round
+  - job postings or reviews mentioning an existing embedded-analytics vendor
+  - headcount growth in product/engineering over the last two quarters
+  - new VP of Product or CPO hire in the last six months
+  - stated priority around self-serve reporting or customer insights
