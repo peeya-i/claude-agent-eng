@@ -1,0 +1,54 @@
+# What we sell, and the boundaries agents must respect when describing it.
+# Message Composer and Evidence Reviewer both read this to keep claims honest.
+
+name: WidgetWare Embedded Analytics Platform
+
+what_we_sell: >
+  A white-labelable, embeddable analytics and dashboard component library
+  plus hosted API that B2B SaaS companies drop into their own product, so
+  their end users get self-serve reporting without the vendor building
+  charting or analytics infrastructure in-house.
+
+who_benefits:
+  - VPs of Product and Engineering accountable for shipping customer-facing analytics
+  - Product Managers who own the reporting or insights surface of their product
+  - Engineering leaders who would otherwise build and maintain charting infrastructure themselves
+  - Customer Success leadership relying on in-product analytics to drive retention
+
+problems_addressed:
+  - months of engineering time spent building and maintaining in-house charting/dashboard infrastructure
+  - inconsistent or slow-to-ship customer-facing reporting features
+  - difficulty scaling data visualization across multiple product surfaces without a dedicated team
+  - competitive pressure to offer self-serve analytics as table stakes
+
+proof_points:
+  # Summary only. The enforceable source of truth — source, disclosure
+  # status, allowed contexts, review date — is proof-points.yaml. Any agent
+  # citing a proof point must resolve it against that registry, not this
+  # list; this list exists for humans skimming this file, not for agents.
+  see: proof-points.yaml
+  summary:
+    - PP-001: powers embedded analytics for multiple production B2B SaaS platforms
+    - PP-002: proven integration with common data warehouses and event pipelines
+    - PP-003: implementation led by engineers who have shipped embeddable UI components at production scale
+
+exclusions:
+  - we do not build custom one-off dashboards as a services engagement
+  - we do not offer a standalone internal BI tool — embedding into the customer's own product is required
+  - we do not guarantee specific engineering-time-savings or adoption figures
+
+typical_engagement_model:
+  - 1-2 week technical evaluation and sandbox integration
+  - pilot embed on one product surface
+  - production rollout and design-system theming support
+
+plausible_outcomes:
+  - a working, themed embedded analytics surface live in the customer's product
+  - reduced engineering time spent building and maintaining in-house charting code
+  - a reusable integration pattern the customer's own team can extend to new surfaces
+
+claims_that_may_not_be_made:
+  - specific percentage engineering-time-savings or adoption figures not backed by a client reference
+  - guaranteed timelines for production rollout
+  - claims of an existing relationship with the target company unless verified
+  - any implication that we have already spoken with the recipient

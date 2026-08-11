@@ -1,0 +1,11 @@
+company_name,website,industry_family,industry_detail,country,region,employee_band,fit_reason
+Northbeam Analytics,https://northbeamanalytics.com,B2B SaaS / vertical software,Marketing analytics SaaS,United States,United States,200-500,mid-market B2B SaaS company shipping customer-facing reporting; plausible embedded-analytics buyer
+Ledgerly Payments,https://ledgerly.io,Fintech / payments platforms,SMB payment processing,Canada,Canada,500-1000,payments platform likely needs merchant-facing reconciliation dashboards
+Marketloop Commerce,https://marketloopcommerce.com,E-commerce / marketplace platforms,B2B marketplace software,United Kingdom,United Kingdom,200-500,marketplace platform needing seller-facing analytics surfaces
+Carewell Health Systems,https://carewellhealth.com,Healthtech / health IT,Practice management software,United States,United States,1000-2000,health IT vendor with compliance overhead but plausible embedded-reporting need
+Fieldstack Ops,https://fieldstackops.com,B2B SaaS / vertical software,Field service management SaaS,Ireland,Ireland,50-200,smaller vertical SaaS company early in a build-vs-buy decision
+Quaymark Freight,https://quaymarkfreight.com,B2B SaaS / vertical software,Logistics and freight SaaS,Australia,Australia,500-1000,logistics SaaS with customer-dashboard roadmap signals
+Brightledger Finance,https://brightledgerfinance.com,Fintech / payments platforms,SMB lending platform,United States,United States,200-500,lending platform needing borrower-facing reporting
+Southport Marketplace,https://southportmarketplace.com,E-commerce / marketplace platforms,Wholesale B2B marketplace,New Zealand,New Zealand,50-200,early-stage marketplace with a growing merchant base
+Cascadia Wellness Tech,https://cascadiawellnesstech.com,Healthtech / health IT,Patient engagement platform,Canada,Canada,200-500,patient engagement SaaS with plausible reporting need
+Trailhead Retail Systems,https://trailheadretail.com,E-commerce / marketplace platforms,Retail POS and inventory SaaS,United Kingdom,United Kingdom,500-1000,retail systems vendor with a merchant-dashboard roadmap

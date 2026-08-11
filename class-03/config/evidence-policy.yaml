@@ -1,0 +1,62 @@
+# Evidence rules applied by the research Skills/agents and, later, enforced
+# deterministically by guardrails. Every external factual claim produced by
+# any agent must satisfy this policy — and so must every claim about our
+# own experience (see proof-points.yaml): an unsourced claim about our own
+# delivery history is exactly as fabricatable as an unsourced claim about
+# a prospect.
+#
+# Two independent dimensions, deliberately not conflated:
+#   claim_type   — what kind of statement this is (epistemic status)
+#   support_type — how strongly the cited evidence backs it (evidentiary strength)
+# A hypothesis can be built on directly-stated facts and still remain a
+# hypothesis; a fact can be under-evidenced. These are different questions.
+
+required_fields_per_claim:
+  - source              # URL or named document the claim came from
+  - source_date         # when the source content was published/updated
+  - retrieval_date       # when the agent retrieved it
+  - evidence_text        # the quoted or paraphrased evidence itself
+  - confidence           # 0.0-1.0
+  - claim_type           # one of: fact, inference, hypothesis
+  - support_type         # one of: direct, derived, unsupported
+
+claim_types:
+  fact: >
+    Directly verifiable and, as stated, not contingent on further reasoning
+    or validation. Example: "Company X announced a $50M funding round on
+    2026-01-14" — checkable against the announcement itself.
+  inference: >
+    A reasoned conclusion drawn from one or more facts, not itself directly
+    stated by any source. Example: "The funding round likely increases
+    hiring capacity" — reasonable, but not something the source asserted.
+  hypothesis: >
+    A proposition offered for testing or validation, not yet confirmed by
+    evidence and not simply derivable from it either. Example: "This
+    company may be evaluating a new analytics vendor" — plausible,
+    explicitly speculative, requires validation with the prospect.
+
+support_types:
+  direct: >
+    The source explicitly states the claim in these or equivalent words.
+  derived: >
+    The claim is a reasoned conclusion drawn from one or more sources, each
+    of which must still be cited. Distinct from claim_type: a "derived"
+    inference and a "derived" hypothesis are both allowed — support_type
+    says how the claim was arrived at, not what kind of claim it is.
+  unsupported: >
+    No source backs this claim yet. Only acceptable for a hypothesis
+    awaiting validation, and must be labeled as such rather than presented
+    as a fact or inference.
+
+rejection_conditions:
+  - claim_type is "fact" or "inference" but support_type is "unsupported"
+  - claim has no source (unless claim_type is "hypothesis" and support_type
+    is explicitly "unsupported")
+  - source has no retrievable date
+  - source is older than staleness_days without a note explaining relevance
+  - claim states a person's identity or role without direct evidence linking them to it
+  - claim implies prior contact or familiarity with the recipient
+  - a claim about our own experience cites a proof point that is not
+    "approved" in proof-points.yaml, or is past its valid_until date
+
+staleness_days: 180

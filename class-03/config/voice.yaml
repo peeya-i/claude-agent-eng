@@ -1,0 +1,19 @@
+# Brand voice constraints for the Message Composer. The Evidence Reviewer
+# scores messages against these rules.
+
+tone:
+  - peer-to-peer
+  - informed
+  - concise
+  - consultative
+
+avoid:
+  - generic compliments
+  - exaggerated claims
+  - fake familiarity
+  - aggressive selling
+  - buzzword-heavy language
+
+first_message:
+  pitch_allowed: false
+  maximum_words: 90
