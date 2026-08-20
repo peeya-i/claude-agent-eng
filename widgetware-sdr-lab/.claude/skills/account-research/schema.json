@@ -1,0 +1,29 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Provisional company profile (Account Research Skill)",
+  "description": "Deliberately provisional — a later chapter formalizes this into a versioned schema with full per-claim source/date citations. For now, `evidence` is a flat list of plain strings.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "company",
+    "industry",
+    "size_estimate",
+    "business_model",
+    "recent_signals",
+    "likely_priorities",
+    "possible_pain_points",
+    "evidence",
+    "confidence"
+  ],
+  "properties": {
+    "company": {"type": "string", "minLength": 1},
+    "industry": {"type": "string", "minLength": 1},
+    "size_estimate": {"type": "string", "minLength": 1},
+    "business_model": {"type": "string", "minLength": 1},
+    "recent_signals": {"type": "array", "items": {"type": "string"}},
+    "likely_priorities": {"type": "array", "items": {"type": "string"}},
+    "possible_pain_points": {"type": "array", "items": {"type": "string"}},
+    "evidence": {"type": "array", "items": {"type": "string"}},
+    "confidence": {"type": "number", "minimum": 0, "maximum": 1}
+  }
+}
