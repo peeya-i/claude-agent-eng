@@ -1,0 +1,45 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Offering configuration (offering.yaml)",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "name",
+    "what_we_sell",
+    "who_benefits",
+    "problems_addressed",
+    "proof_points",
+    "exclusions",
+    "typical_engagement_model",
+    "plausible_outcomes",
+    "claims_that_may_not_be_made"
+  ],
+  "properties": {
+    "name": {"type": "string", "minLength": 1},
+    "what_we_sell": {"type": "string", "minLength": 1},
+    "who_benefits": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+    "problems_addressed": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+    "proof_points": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["see", "summary"],
+      "properties": {
+        "see": {"type": "string", "minLength": 1},
+        "summary": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "minProperties": 1,
+            "maxProperties": 1,
+            "additionalProperties": {"type": "string"}
+          }
+        }
+      }
+    },
+    "exclusions": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+    "typical_engagement_model": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+    "plausible_outcomes": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+    "claims_that_may_not_be_made": {"type": "array", "items": {"type": "string"}, "minItems": 1}
+  }
+}

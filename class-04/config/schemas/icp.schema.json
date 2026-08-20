@@ -1,0 +1,38 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ICP configuration (icp.yaml)",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["industry", "company_size", "geography", "target_roles", "buying_signals"],
+  "properties": {
+    "industry": {
+      "type": "array",
+      "items": {"type": "string", "minLength": 1},
+      "minItems": 1
+    },
+    "company_size": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["minimum_employees", "maximum_employees"],
+      "properties": {
+        "minimum_employees": {"type": "integer", "minimum": 0},
+        "maximum_employees": {"type": ["integer", "null"], "minimum": 0}
+      }
+    },
+    "geography": {
+      "type": "array",
+      "items": {"type": "string", "minLength": 1},
+      "minItems": 1
+    },
+    "target_roles": {
+      "type": "array",
+      "items": {"type": "string", "minLength": 1},
+      "minItems": 1
+    },
+    "buying_signals": {
+      "type": "array",
+      "items": {"type": "string", "minLength": 1},
+      "minItems": 1
+    }
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Evidence policy configuration (evidence-policy.yaml)",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "required_fields_per_claim",
+    "claim_types",
+    "support_types",
+    "rejection_conditions",
+    "staleness_days"
+  ],
+  "properties": {
+    "required_fields_per_claim": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "source",
+          "source_date",
+          "retrieval_date",
+          "evidence_text",
+          "confidence",
+          "claim_type",
+          "support_type"
+        ]
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "claim_types": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["fact", "inference", "hypothesis"],
+      "properties": {
+        "fact": {"type": "string", "minLength": 1},
+        "inference": {"type": "string", "minLength": 1},
+        "hypothesis": {"type": "string", "minLength": 1}
+      }
+    },
+    "support_types": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["direct", "derived", "unsupported"],
+      "properties": {
+        "direct": {"type": "string", "minLength": 1},
+        "derived": {"type": "string", "minLength": 1},
+        "unsupported": {"type": "string", "minLength": 1}
+      }
+    },
+    "rejection_conditions": {
+      "type": "array",
+      "items": {"type": "string"},
+      "minItems": 1
+    },
+    "staleness_days": {"type": "integer", "minimum": 1}
+  }
+}

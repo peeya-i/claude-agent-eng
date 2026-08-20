@@ -1,0 +1,19 @@
+{
+  "company": "LaunchDarkly",
+  "industry": "Developer tools / feature-flag and experimentation SaaS (approximate — based on general background knowledge, not confirmed against launchdarkly.com in this session)",
+  "size_estimate": "unknown — plausibly within WidgetWare's target range based on general reputation as a mid-size private company, but not independently confirmed",
+  "business_model": "Sells a platform for feature flagging, progressive rollouts, and experimentation to engineering teams, based on general public knowledge of the product category rather than a verified primary source",
+  "recent_signals": [],
+  "likely_priorities": [
+    "speculative: continued investment in developer-facing tooling and platform reliability, typical of companies in this product category — not confirmed for this company specifically"
+  ],
+  "possible_pain_points": [
+    "speculative: as with many developer-tools vendors, plausibly balancing self-serve adoption against enterprise sales motion — not confirmed, offered only as a starting hypothesis for further research"
+  ],
+  "evidence": [
+    "no web search or fetch tool was used in this session — this profile reflects only general background knowledge of the company's product category, not verified, dated sources",
+    "company website (launchdarkly.com) was not fetched in this session, so industry, size, and business model above are unconfirmed and may be stale or inaccurate",
+    "no recent-signals research was performed; recent_signals is left empty rather than filled with plausible-sounding but unverified guesses"
+  ],
+  "confidence": 0.15
+}
